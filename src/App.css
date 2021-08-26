@@ -39,6 +39,11 @@
 
 .editor {
   counter-reset: line;
+}
+
+.editor-container {
+  height: 500px;
+  overflow: auto;
   border: 1px solid #ced4da;
 }
 
@@ -58,4 +63,18 @@
   text-align: right;
   width: 40px;
   font-weight: 100;
+}
+
+.glass {
+  backdrop-filter: blur(9px) saturate(154%);
+    -webkit-backdrop-filter: blur(9px) saturate(154%);
+    background-color: rgba(31, 67, 39, 0.66);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+body{
+  background-image: url("https://cdn.wallpapersafari.com/31/27/DJfoQl.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

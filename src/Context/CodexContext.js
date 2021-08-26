@@ -20,15 +20,16 @@ export function CodexProvider({ children }) {
             maxTokens: 500,
             temperature: 0,
             topP: 1,
-            presencePenalty: 0,
-            frequencyPenalty: 0,
-            bestOf: 1,
+            presencePenalty: 0.5,
+            frequencyPenalty: 0.7,
+            bestOf: 2,
             n: 1,
             stream: false,
-            stop: ['\n', "testing"]
+            stop: null,
         });
-    
+
         console.log("codex resp: ", codexResponse.data);
+        return codexResponse.data.choices[0].text;
     }
 
     const value = {
