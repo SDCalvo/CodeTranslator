@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
-
 import Editor from 'react-simple-code-editor'
-import { highlight, languages } from 'prismjs/components/prism-core'
 import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/themes/prism.css'
+import {useCodex} from '../Context/CodexContext'
 
 export default function CodeEditor() {
-    const code = `function add(a, b) {
+    
+	const { getCompletion } = useCodex();
+
+	const code = `function add(a, b) {
 		return a + b;
 	  }
 	  
@@ -26,9 +27,15 @@ export default function CodeEditor() {
 
     const [codeValue, setCodeValue] = useState(code)
 
+	function handleSubmit(e) {
+		e.preventDefault()
+		getCompletion("translate this code from javascript to python " + codeValue);
+		console.log("code value: ", codeValue);
+	}
+
     return (
         <div className="container">
-			<div className="row">
+			<div className="row justify-content-center align-items-center">
 				<Editor
 					value={codeValue}
 					onValueChange={(code) => setCodeValue(code)}
@@ -42,6 +49,7 @@ export default function CodeEditor() {
 						outline: 0,
 					}}
 				/>
+				<button className="btn btn-primary rounded w-25 my-5">asd</button>
 			</div>
         </div>
     )

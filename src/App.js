@@ -1,10 +1,13 @@
-import './App.css';
-import CodeEditor from './Components/CodeEditor';
+import './App.css'
+import CodeEditor from './Components/CodeEditor'
+import {CodexProvider} from './Context/CodexContext'
 
 function App() {
-  return (
-    <CodeEditor></CodeEditor>
-  );
+    return (
+        <CodexProvider>
+            <CodeEditor></CodeEditor>
+        </CodexProvider>
+    )
 }
 
-export default App;
+export default App
