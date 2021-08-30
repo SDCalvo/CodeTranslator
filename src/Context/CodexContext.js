@@ -23,7 +23,7 @@ export function CodexProvider({ children }) {
             presencePenalty: 0.5,
             frequencyPenalty: 0.7,
             bestOf: 2,
-            n: 1,
+            n: 2,
             stream: false,
             stop: null,
         });
